@@ -6,12 +6,12 @@ import java.awt.event.WindowEvent;
 
 /** This is the demo class. */
 
-public class Grids extends Frame {
+public class App extends Frame {
   /*
    * Construct a GfxDemo2 given its title, width and height. Uses a
    * GridBagLayout to make the Canvas resize properly.
    */
-  Grids(String title, int w, int h, int rows, int cols) {
+  App(String title, int w, int h, int rows, int cols) {
     setTitle(title);
 
     // Now create a Canvas and add it to the Frame.
@@ -31,6 +31,6 @@ public class Grids extends Frame {
   }
 
   public static void main(String[] a) {
-    new Grids("Test", 600, 600, 40, 80).setVisible(true);
+    new App("Cellular Automaton", 600, 600, 40, 80).setVisible(true);
   }
 }
