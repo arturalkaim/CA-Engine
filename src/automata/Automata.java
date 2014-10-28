@@ -92,6 +92,7 @@ public class Automata {
 		}
 		return 0;
 	}
+	@SuppressWarnings("unused")
 	private int nextValue007(String s) {
 		switch (s) {
 		case "000":
@@ -115,7 +116,8 @@ public class Automata {
 	}
 	public ArrayList<Integer> run(int L, Graphics g, GridsCanvas gridsCanvas){
 		printLine();
-		for (int i = 0; i < L; i++) {
+		gridsCanvas.paintLine(g, 0,line);
+		for (int i = 1; i < L; i++) {
 			line = computeNextLine();
 			gridsCanvas.paintLine(g, i,line);
 			printLine();
@@ -135,7 +137,7 @@ public class Automata {
 		ArrayList<Integer> next = new ArrayList<Integer>(size);
 
 		for (int i = 0; i < size; i++) {
-			next.add(nextValue(neighbourToString(i)));
+			next.add(nextValue110(neighbourToString(i)));
 		}
 		
 		return next;

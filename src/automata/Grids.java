@@ -31,6 +31,6 @@ public class Grids extends Frame {
   }
 
   public static void main(String[] a) {
-    new Grids("Test", 600, 600, 40, 40).setVisible(true);
+    new Grids("Test", 600, 600, 40, 80).setVisible(true);
   }
 }
