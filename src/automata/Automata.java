@@ -1,5 +1,6 @@
 package automata;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 public class Automata {
@@ -112,10 +113,11 @@ public class Automata {
 		}
 		return 0;
 	}
-	public ArrayList<Integer> run(int L){
+	public ArrayList<Integer> run(int L, Graphics g, GridsCanvas gridsCanvas){
 		printLine();
 		for (int i = 0; i < L; i++) {
 			line = computeNextLine();
+			gridsCanvas.paintLine(g, i,line);
 			printLine();
 		}
 		
@@ -133,7 +135,7 @@ public class Automata {
 		ArrayList<Integer> next = new ArrayList<Integer>(size);
 
 		for (int i = 0; i < size; i++) {
-			next.add(nextValue007(neighbourToString(i)));
+			next.add(nextValue(neighbourToString(i)));
 		}
 		
 		return next;
