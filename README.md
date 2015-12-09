@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/383ceb6e1dae41aaa3b76d5eaba39c5f)](https://www.codacy.com/app/arturalkaim_756/CA-Engine)
+
 CA-Engine
 =========
 
