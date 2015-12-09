@@ -27,7 +27,6 @@ class GridsCanvas extends Canvas {
 	}
 
 	public void paint(Graphics g) {
-		int i;
 		width = getSize().width;
 		height = getSize().height;
 
