@@ -2,10 +2,7 @@ package automata;
 
 import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.Frame;
 import java.awt.Graphics;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 /**
@@ -14,11 +11,11 @@ import java.util.ArrayList;
  * @author Ian Darwin, http://www.darwinsys.com/
  */
 class GridsCanvas extends Canvas {
-	int width, height;
+	private int width, height;
 
-	int rows;
+	private int rows;
 
-	int cols;
+	private int cols;
 
 	private int cs;
 
@@ -42,7 +39,7 @@ class GridsCanvas extends Canvas {
 
 	}
 
-	void paintLine(Graphics g, int i, ArrayList<Integer> line) {
+	public void paintLine(Graphics g, int i, ArrayList<Integer> line) {
 		int rowWid = width / (cols);
 		int rowHt = height / (rows);
 		boolean test = true;

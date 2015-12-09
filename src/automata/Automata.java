@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Automata {
 	private int size;
 
-	ArrayList<Integer> line;
+	private ArrayList<Integer> line;
 
 	public Automata(int i) {
 		size = i;
@@ -46,9 +46,11 @@ public class Automata {
 			return 0;
 		case "111":
 			return 1;
+		default:
+			return 0;
 		}
-		return 0;
 	}
+
 	@SuppressWarnings("unused")
 	private int nextValue30(String s) {
 		switch (s) {
@@ -68,9 +70,11 @@ public class Automata {
 			return 0;
 		case "111":
 			return 0;
+		default:
+			return 0;
 		}
-		return 0;
 	}
+
 	private int nextValue110(String s) {
 		switch (s) {
 		case "000":
@@ -89,9 +93,11 @@ public class Automata {
 			return 1;
 		case "111":
 			return 0;
+		default:
+			return 0;
 		}
-		return 0;
 	}
+
 	@SuppressWarnings("unused")
 	private int nextValue007(String s) {
 		switch (s) {
@@ -111,24 +117,26 @@ public class Automata {
 			return 1;
 		case "111":
 			return 0;
+		default:
+			return 0;
 		}
-		return 0;
 	}
-	public ArrayList<Integer> run(int L, Graphics g, GridsCanvas gridsCanvas){
+
+	public ArrayList<Integer> run(int L, Graphics g, GridsCanvas gridsCanvas) {
 		printLine();
-		gridsCanvas.paintLine(g, 0,line);
+		gridsCanvas.paintLine(g, 0, line);
 		for (int i = 1; i < L; i++) {
 			line = computeNextLine();
-			gridsCanvas.paintLine(g, i,line);
+			gridsCanvas.paintLine(g, i, line);
 			printLine();
 		}
-		
+
 		return line;
 	}
 
 	private void printLine() {
 		for (Integer i : line) {
-			System.out.print((i==0?" ":"W") + " ");
+			System.out.print((i == 0 ? " " : "W") + " ");
 		}
 		System.out.println();
 	}
@@ -137,9 +145,9 @@ public class Automata {
 		ArrayList<Integer> next = new ArrayList<Integer>(size);
 
 		for (int i = 0; i < size; i++) {
-			next.add(nextValue110(neighbourToString(i)));
+			next.add(nextValue30(neighbourToString(i)));
 		}
-		
+
 		return next;
 	}
 }
